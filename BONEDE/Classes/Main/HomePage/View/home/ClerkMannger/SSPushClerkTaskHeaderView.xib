@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SSPushClerkTaskHeaderView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RP9-8r-hnn">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ms2-05-Vik">
+                            <rect key="frame" x="347" y="10" width="13" height="24"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <color key="textColor" red="0.062745098040000002" green="0.5568627451" blue="0.91372549020000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="ms2-05-Vik" firstAttribute="centerY" secondItem="RP9-8r-hnn" secondAttribute="centerY" id="cIG-gs-2Uq"/>
+                        <constraint firstAttribute="trailing" secondItem="ms2-05-Vik" secondAttribute="trailing" constant="15" id="iqE-Yg-tdi"/>
+                    </constraints>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pushTask_s" translatesAutoresizingMaskIntoConstraints="NO" id="kwe-NP-Avm">
+                    <rect key="frame" x="9" y="15" width="16" height="14"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="14" id="o8Y-Wq-AnA"/>
+                        <constraint firstAttribute="width" constant="16" id="yMS-Iy-1MA"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发布任务" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npu-Ya-YmB">
+                    <rect key="frame" x="32" y="13.5" width="58" height="17"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.062745098039215685" green="0.55686274509803924" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="RP9-8r-hnn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="6sT-fO-Hta"/>
+                <constraint firstItem="npu-Ya-YmB" firstAttribute="leading" secondItem="kwe-NP-Avm" secondAttribute="trailing" constant="7" id="Bkl-Yx-jwQ"/>
+                <constraint firstItem="kwe-NP-Avm" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="9" id="V1h-Nx-AJp"/>
+                <constraint firstItem="npu-Ya-YmB" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="b3w-cS-96z"/>
+                <constraint firstAttribute="bottom" secondItem="RP9-8r-hnn" secondAttribute="bottom" id="bfL-m3-tSg"/>
+                <constraint firstAttribute="trailing" secondItem="RP9-8r-hnn" secondAttribute="trailing" id="gLz-CC-sB2"/>
+                <constraint firstItem="kwe-NP-Avm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="h3p-qM-kWX"/>
+                <constraint firstItem="RP9-8r-hnn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qa9-4E-rRT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="50.399999999999999" y="108.84557721139431"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pushTask_s" width="25.5" height="22"/>
+    </resources>
+</document>
