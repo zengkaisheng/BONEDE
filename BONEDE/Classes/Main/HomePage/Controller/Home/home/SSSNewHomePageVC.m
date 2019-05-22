@@ -203,7 +203,6 @@
         //总背景
         [_sContenView.imgBackground sd_setImageWithURL:[NSURL URLWithString:kMeUnNilStr(self.activeModel.background.img)] placeholderImage: [UIImage imageNamed:@"homeb"]];
         
-//#warning --
         //未读数背景
         [_sContenView.imgTop sd_setImageWithURL:[NSURL URLWithString:kMeUnNilStr(self.styleModel.top_style.img)] placeholderImage: [UIImage imageNamed:@"talt"]];
         //商城->动态 kMeUnNilStr(self.styleModel.shop_style.img)
@@ -273,7 +272,6 @@
 #pragma mark -SSSNewHomePageViewDelegate
 
 - (void)toNoticeVC{
-//#warning ---
 //    SSAIHomeVC *home = [[SSAIHomeVC alloc]init];
 //    [self.navigationController pushViewController:home animated:YES];
     if([SSUserInfoModel isLogin]){

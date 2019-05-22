@@ -70,7 +70,7 @@
 - (void)toShareWithModel:(SSHomeTestTitleModel *)model{
     SSShareTool *shareTool = [SSShareTool me_instanceForTarget:self];
     
-#warning ---
+#warning ---差url
     NSString *shareIP = @"http://www.baidu.com";
     shareTool.sharWebpageUrl = shareIP;
     //    [NSString stringWithFormat:@"%@%@",SSIPArticelShare,@(_detailModel.article_id).description];
