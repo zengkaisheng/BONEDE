@@ -31,6 +31,43 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"结果上传";
+    if(_type == SSHomeAddTestDecTypeeditVC){
+        CGFloat min = 0;
+        CGFloat max = 0;
+        if(_model.type == 1){
+            for (SSHomeAddTestDecContentModel *imagMolde  in _model.questions) {
+                NSArray *numbers = @[@([kMeUnNilStr(imagMolde.score_a) floatValue]),@([imagMolde.score_b floatValue]),@([imagMolde.score_c floatValue]),@([imagMolde.score_d floatValue])];
+                numbers = [numbers sortedArrayUsingSelector:@selector(compare:)];
+                
+                min+= [numbers[0] floatValue];
+                max+= [[numbers lastObject] floatValue];
+            }
+        }else{
+            for (SSHomeAddTestDecContentModel *contentMolde  in _model.questions) {
+                NSArray *numbers = @[@([kMeUnNilStr(contentMolde.score_a) floatValue]),@([contentMolde.score_b floatValue]),@([contentMolde.score_c floatValue]),@([contentMolde.score_d floatValue])];
+                numbers = [numbers sortedArrayUsingSelector:@selector(compare:)];
+                
+                min+= [numbers[0] floatValue];
+                max+= [[numbers lastObject] floatValue];
+            }
+        }
+        CGFloat av = (max - min)/ (kMeUnArr(_model.answers).count + 1);
+        kMeWEAKSELF
+        [kMeUnArr(_model.answers) enumerateObjectsUsingBlock:^(SSHomeAddTestDecResultModel * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            kMeSTRONGSELF
+            if(idx==0){
+                obj.min = min;
+                obj.max = min +av;
+            }else if (idx==kMeUnArr(strongSelf->_model.answers).count-1){
+                obj.min = min + (av*idx) + 1;
+                obj.max = max;
+            }
+            else{
+                obj.min = min + (av*idx) + 1;
+                obj.max = min + (av*(idx+1));
+            }
+        }];
+    }
     if(_type != SSHomeAddTestDecTypelplatVC){
         [self.view addSubview:[self getBottomView]];
     }

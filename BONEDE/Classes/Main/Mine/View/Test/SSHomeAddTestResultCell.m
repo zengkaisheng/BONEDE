@@ -32,7 +32,7 @@
 
 - (void)setUiWIthModel:(SSHomeAddTestDecResultModel *)model index:(NSInteger)index type:(SSHomeAddTestDecTypeVC)type;{
     _lblLevle.text = [NSString stringWithFormat:@"分值阶段%@",@(index+1)];
-    _lblScore.text = [NSString stringWithFormat:@"%@~%@",@(model.min),@(model.max)];
+    _lblScore.text = [NSString stringWithFormat:@"%.2f~%.2f",model.min,model.max];
     if(kMeUnNilStr(model.answer).length){
         kSDLoadImg(_imgPic, SSLoadAddQiniuImagesWithUrl(model.answer));
     }else{
