@@ -70,8 +70,12 @@
 - (void)toShareWithModel:(SSHomeTestTitleModel *)model{
     SSShareTool *shareTool = [SSShareTool me_instanceForTarget:self];
     
-#warning ---差url
-    NSString *shareIP = @"http://www.baidu.com";
+#ifdef TestVersion
+    NSString *shareIP = [NSString stringWithFormat:@"https://test.bondehome.com/wechat/dist/newAuth.html?entrance=start&bank_id=%@&uid=%@",kMeUnNilStr(model.idField),kMeUnNilStr(kCurrentUser.uid)];
+#else
+      NSString *shareIP = [NSString stringWithFormat:@"https://api.bondehome.com/wechat/dist/newAuth.html?entrance=start&bank_id=%@&uid=%@",kMeUnNilStr(model.idField),kMeUnNilStr(kCurrentUser.uid)];
+#endif
+
     shareTool.sharWebpageUrl = shareIP;
     //    [NSString stringWithFormat:@"%@%@",SSIPArticelShare,@(_detailModel.article_id).description];
     shareTool.shareTitle = kMeUnNilStr(model.title);
