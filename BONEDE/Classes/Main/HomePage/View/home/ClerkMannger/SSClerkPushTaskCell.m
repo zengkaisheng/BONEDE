@@ -32,7 +32,7 @@
     _lblPushTitleP.text = kMeUnNilStr(model.task_title).length?kMeUnNilStr(model.task_title):@"发布任务标题";
    _lblPushContentP.text = kMeUnNilStr(model.task_content).length?kMeUnNilStr(model.task_content):@"发布任务内容";
    _lblPushTimeP.text = kMeUnNilStr(model.last_time).length?kMeUnNilStr(model.last_time):@"选择任务时间";
-    _lblClerkP.text = kMeUnArr(model.arrclerk_id).count?@"已选择":@"指定店员跟进";
+    _lblClerkP.text = kMeUnArr(model.arrclerk_id).count?@"已选择":@"指定员工跟进";
 }
 
 - (IBAction)pushtitleAction:(UIButton *)sender {

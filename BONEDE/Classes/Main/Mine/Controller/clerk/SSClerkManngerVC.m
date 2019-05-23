@@ -35,7 +35,7 @@
 }
 
 - (void)initSomeThing{
-    self.title = @"店员添加";
+    self.title = @"员工添加";
     _consTopMargin.constant = kMeNavBarHeight;
     [_tableVIew registerNib:[UINib nibWithNibName:NSStringFromClass([SSClerkCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SSClerkCell class])];
     _tableVIew.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -70,7 +70,7 @@
     [cell setUIWIthModel:model];
     kMeWEAKSELF
     cell.moreBlock = ^{
-        SSCustomActionSheet *sheet = [[SSCustomActionSheet alloc]initWithTitles:@[@"删除",@"查看店员佣金统计"]];
+        SSCustomActionSheet *sheet = [[SSCustomActionSheet alloc]initWithTitles:@[@"删除",@"查看员工佣金统计"]];
         sheet.blockBtnTapHandle = ^(NSInteger index){
             if(index){
                 kMeSTRONGSELF
@@ -101,7 +101,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SSClerkModel *model = self.refresh.arrData[indexPath.row];
-    SSCustomActionSheet *sheet = [[SSCustomActionSheet alloc]initWithTitles:@[@"删除",@"查看店员佣金统计"]];
+    SSCustomActionSheet *sheet = [[SSCustomActionSheet alloc]initWithTitles:@[@"删除",@"查看员工佣金统计"]];
     kMeWEAKSELF
     sheet.blockBtnTapHandle = ^(NSInteger index){
         if(index){
@@ -127,7 +127,7 @@
 
 - (void)toAddClerk:(UIButton *)btn{
     kMeWEAKSELF
-    [YBPopupMenu showRelyOnView:btn titles:@[@"添加店员",@"店员排名"] icons:nil menuWidth:100 otherSettings:^(YBPopupMenu *popupMenu) {
+    [YBPopupMenu showRelyOnView:btn titles:@[@"添加员工",@"员工排名"] icons:nil menuWidth:100 otherSettings:^(YBPopupMenu *popupMenu) {
         popupMenu.priorityDirection = YBPopupMenuPriorityDirectionBottom;
         popupMenu.borderWidth = 1;
         popupMenu.borderColor = kSSblack;
@@ -152,7 +152,7 @@
 }
 
 //- (IBAction)toSearchClerk:(UIButton *)sender {
-//    SSClerkSearchVC *searchViewController = [SSClerkSearchVC searchViewControllerWithHotSearches:@[] searchBarPlaceholder:@"搜索店员" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
+//    SSClerkSearchVC *searchViewController = [SSClerkSearchVC searchViewControllerWithHotSearches:@[] searchBarPlaceholder:@"搜索员工" didSearchBlock:^(PYSearchViewController *searchViewController, UISearchBar *searchBar, NSString *searchText) {
 //        SSClerkSearchDataVC *dataVC = [[SSClerkSearchDataVC alloc]initWithKey:searchText];
 //        [searchViewController.navigationController pushViewController:dataVC animated:YES];
 //    }];
@@ -169,7 +169,7 @@
         _refresh.isDataInside = YES;
         [_refresh setBlockEditFailVIew:^(ZLFailLoadView *failView) {
             failView.backgroundColor = [UIColor whiteColor];
-            failView.lblOfNodata.text = @"没有店员";
+            failView.lblOfNodata.text = @"没有员工";
         }];
     }
     return _refresh;

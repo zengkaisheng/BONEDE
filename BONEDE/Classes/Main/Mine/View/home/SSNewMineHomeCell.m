@@ -375,7 +375,7 @@
         case 5:{
             //clerk
             _type = SSClientTypeClerkStyle;
-            _levStr = @"当前等级:店员";
+            _levStr = @"当前等级:员工";
             
         }
             break;

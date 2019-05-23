@@ -25,7 +25,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"店员排名";
+    self.title = @"员工排名";
     //默认 转发 大到小
     _type = kSSFilterClerkViewZfType;
     _typeSort = ButtonClickTypeDown;
@@ -122,7 +122,7 @@
         _refresh.showMaskView = YES;
         [_refresh setBlockEditFailVIew:^(ZLFailLoadView *failView) {
             failView.backgroundColor = [UIColor whiteColor];
-            failView.lblOfNodata.text = @"没有店员";
+            failView.lblOfNodata.text = @"没有员工";
         }];
     }
     return _refresh;

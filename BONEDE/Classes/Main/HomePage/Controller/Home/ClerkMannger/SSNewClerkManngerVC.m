@@ -8,7 +8,7 @@
 
 #import "SSNewClerkManngerVC.h"
 #import "SSClerkTaskCell.h"
-#import "SSClerkLogCell.h"
+//#import "SSClerkLogCell.h"
 #import "SSClerkSortCell.h"
 #import "SSCLerkTaskHomeVC.h"
 #import "SSCLerkLogHomeVC.h"
@@ -50,7 +50,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -65,7 +65,9 @@
             [strongSelf.navigationController pushViewController:vc animated:YES];
         };
         return cell;
-    }else if (indexPath.row == 1){
+    }
+    /*
+    else if (indexPath.row == 1){
         SSClerkLogCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SSClerkLogCell class]) forIndexPath:indexPath];
         [cell setUIWithArr:_model];
 //        cell.selectIndexBlock = ^(NSInteger index) {
@@ -75,7 +77,9 @@
 //            [strongSelf.navigationController pushViewController:vc animated:YES];
 //        };
         return cell;
-    }else{
+    }
+     */
+    else{
         SSClerkSortCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SSClerkSortCell class]) forIndexPath:indexPath];
         NSArray *arr = _arrSelect[_currentIndex];
         [cell setUIWithArr:arr selectBlock:^(NSInteger index) {
@@ -90,9 +94,12 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == 0){
         return [SSClerkTaskCell getCellHeightWithArr:_model];
-    }else if (indexPath.row == 1){
+    }
+    /*else if (indexPath.row == 1){
         return [SSClerkLogCell getCellHeightWithArr:_model];
-    }else{
+    }
+     */
+     else{
         NSArray *arr = _arrSelect[_currentIndex];
         return [SSClerkSortCell getCellHeightWithArr:arr];
     }
@@ -117,13 +124,17 @@
     if(indexPath.row == 0){
         SSCLerkTaskHomeVC *vc = [[SSCLerkTaskHomeVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 1){
+    }
+    /*
+    else if (indexPath.row == 1){
         if(kCurrentUser.client_type == SSClientBTypeStyle){
             return;
         }
         SSCLerkLogHomeVC *vc = [[SSCLerkLogHomeVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
-    }else if (indexPath.row == 2){
+    }
+     */
+     else {
         SSCLerkSortHomeVC *vc = [[SSCLerkSortHomeVC alloc]init];
         [self.navigationController pushViewController:vc animated:YES];
     }
@@ -133,7 +144,7 @@
     if(!_tableView){
         _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0,kMeNavBarHeight, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight) style:UITableViewStylePlain];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SSClerkTaskCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SSClerkTaskCell class])];
-        [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SSClerkLogCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SSClerkLogCell class])];
+//        [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SSClerkLogCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SSClerkLogCell class])];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SSClerkSortCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SSClerkSortCell class])];
         [_tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SSPushClerkTaskHeaderView class]) bundle:nil] forHeaderFooterViewReuseIdentifier:NSStringFromClass([SSPushClerkTaskHeaderView class])];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;

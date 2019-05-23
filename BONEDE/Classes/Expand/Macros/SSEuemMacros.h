@@ -70,7 +70,7 @@ typedef enum : NSUInteger {
     MEGoodMannager,
     MEWebAppMannger
 } SSMineHomeCellStyle;
-#define SSMineHomeCellStyleTitle @[@"我的预约",@"中心管理",@"我的中心",@"兑换中心",@"我的收藏",@"聊天",@"客服电话",@"收货地址",@"绑定手机",@"我的活动",@"访客统计",@"获客海报",@"获客文章",@"优惠券佣金",@"门店申请",@"寻味师",@"获客图文",@"AI雷达",@"数据统计",@"店铺管理",@"店员添加",@"预约管理",@"优惠券佣金",@"我的美豆",@"佣金订单",@"我的上级",@"提现明细",@"客户资源",@"推广二维码",@"我的佣金",@"自提订单",@"品牌管理",@"佣金统计",@"美豆订单",@"购物车",@"品牌故事",@"商品管理",@"小程序管理"]
+#define SSMineHomeCellStyleTitle @[@"我的预约",@"中心管理",@"我的中心",@"兑换中心",@"我的收藏",@"聊天",@"客服电话",@"收货地址",@"绑定手机",@"我的活动",@"访客统计",@"获客海报",@"获客文章",@"优惠券佣金",@"门店申请",@"寻味师",@"获客图文",@"AI雷达",@"数据统计",@"店铺管理",@"员工添加",@"预约管理",@"优惠券佣金",@"我的美豆",@"佣金订单",@"我的上级",@"提现明细",@"客户资源",@"推广二维码",@"我的佣金",@"自提订单",@"品牌管理",@"佣金统计",@"美豆订单",@"购物车",@"品牌故事",@"商品管理",@"小程序管理"]
 #define SSMineHomeCellStyleImage @[@"icon_woddemiaosha",@"icon-khnytpgj",@"icon_fenxiaozhognxin",@"icon_zhuceyoujiang",@"icon_wodeshoucang",@"icon-qrpteb",@"icon-qrptebjnyt",@"nhwxfbfh",@"qlru",@"qritfc",@"minedata",@"mineposter",@"minearticel",@"iqpgweqq",@"uyyhjhyg",@"goodApply",@"minepa",@"homeailei",@"minedatatj",@"minedianpu",@"minedianyuan",@"mineyuyue",@"minejuanyongjin",@"minemeidou",@"mineorderall",@"mineshangji",@"minetixian",@"minetuandui",@"minetuigcode",@"mineyongjing",@"mineziti",@"minepinpai",@"mineyongjintongji",@"meidouorder",@"homeShopCart",@"minebrandstore",@"customGood",@"minedianpu"]
 
 //订单
@@ -171,7 +171,7 @@ typedef enum : NSUInteger {
     SSBrandMannager,
     SSGoodMannager
 } SSDistrbutionCellStyle;
-#define SSDistrbutionCellStyleTitle @[@"我的美豆",@"我的订单",@"我的团队",@"推广二维码",@"订单金额",@"我的等级",@"我的上级",@"店员管理",@"预约管理",@"数据统计",@"提现明细",@"归属店",@"佣金统计",@"优惠劵佣金",@"店铺管理",@"自提订单",@"品牌管理",@"商品管理"];
+#define SSDistrbutionCellStyleTitle @[@"我的美豆",@"我的订单",@"我的团队",@"推广二维码",@"订单金额",@"我的等级",@"我的上级",@"员工管理",@"预约管理",@"数据统计",@"提现明细",@"归属店",@"佣金统计",@"优惠劵佣金",@"店铺管理",@"自提订单",@"品牌管理",@"商品管理"];
 #define SSDistrbutionCellStyleImage @[@"icon_fenxiaoyognjin",@"icon_fenxiaodigndan",@"icon_tuandui",@"icon_tuijian",@"icon_fenxiaoyognjin",@"icon_fenxiaodigndan",@"icon-qrhhxe",@"yhkmtpgj",@"cbxqtpgj",@"ovrntpgj",@"rjgmjexl",@"rnntuyyh",@"weqqxyyf",@"iqpgweqq",@"stroeManger",@"SelfExtractionOrder",@"kkthtpgj",@"customGood"];
 
 //支付状态
@@ -243,7 +243,7 @@ typedef enum : NSUInteger {
 //typedef enum : NSUInteger {
 //    SSLoginUserCType = 1,//C端用户
 //    SSLoginUserBType = 2,//B端用户
-//    SSLoginUserCLerkType = 3,//店员
+//    SSLoginUserCLerkType = 3,//员工
 //} SSLoginUserType;
 
 

@@ -62,7 +62,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,assign) NSInteger is_new;//是否新品
 @property (nonatomic,assign) NSInteger is_hot;//爆款
 @property (nonatomic,assign) NSInteger is_recommend;//推荐
-@property (nonatomic,assign) NSInteger is_clerk_share;//是否推荐店员分享
+@property (nonatomic,assign) NSInteger is_clerk_share;//是否推荐员工分享
 @property (nonatomic,strong) NSString *restrict_num;//限制购买个数
 @property (nonatomic,strong) NSString *category_id;//类目id
 @property (nonatomic,strong) NSString *category;

@@ -99,7 +99,7 @@ static SSUserInfoModel *shareUser;
 }
 
 - (SSClientTypeStyle)client_type{
-    //用户身份 4普通会员 3体验店 2营销中心 1售后中心 5店员
+    //用户身份 4普通会员 3体验店 2营销中心 1售后中心 5员工
     if(self.user_type == 4){
         return SSClientCTypeStyle;
     }else if (self.user_type == 3){

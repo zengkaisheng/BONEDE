@@ -35,7 +35,7 @@
     // Initialization code
 }
 
-//B 店员端的 预约管理
+//B 员工端的 预约管理
 - (void)setBUIWithModel:(SSAppointmentModel *)model Type:(SSAppointmenyStyle)type{
     _model = model;
     kSDLoadImg(_imgPic, SSLoadQiniuImagesWithUrl(kMeUnNilStr(model.images)));

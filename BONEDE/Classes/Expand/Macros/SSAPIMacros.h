@@ -87,7 +87,7 @@
 #define SSIPcommonbrandstorybrandStory @"common/brandstory/brandStory"
 
 /*********************************************/
-#pragma makr - 新版本 顾客 图文 店员
+#pragma makr - 新版本 顾客 图文 员工
 
 //图文
 //获客图文-海报
@@ -104,7 +104,7 @@
 //工作表现-获取店铺员工当月沟通祥情
 #define SSIPcommongetStoreThisMonthFollowUpDetail @"common/clerk/getStoreThisMonthFollowUpDetail"
 
-//店员
+//员工
 //员工排名
 #define SSIPcommonclerkclerkOrderCount @"common/clerk/clerkOrderCount"
 //运营日报(返回上面两个饼图数据)
@@ -117,7 +117,7 @@
 #define SSIPcommonclerkclerkManagement @"common/clerk/clerkManagement"
 //工作统计-服务日志（统计部分）
 #define SSIPcommonclerkserviceLog @"common/clerk/serviceLog"
-//工作统计-服务日志(店员列表部分)
+//工作统计-服务日志(员工列表部分)
 #define SSIPcommonclerkclerkServiceLog @"common/clerk/clerkServiceLog"
 //任务祥情
 #define SSIPcommonclertaskDetail @"common/clerk/taskDetail"
@@ -127,25 +127,25 @@
 #define SSIPcommonclerkclerkTaskFinishState @"common/clerk/clerkTaskFinishState"
 //工作日报
 #define SSIPcommoncustomerdailyWorkReport @"common/customer/dailyWorkReport"
-//店员通过分享数排名
+//员工通过分享数排名
 #define SSIPcommonclerkclerkOrderByShareCount @"common/clerk/clerkOrderByShareCount"
 //员工管理->员工日志
 #define SSIPcommonclerkclerkTaskService @"common/clerk/clerkTaskService"
 //员工管理->员工任务
 #define SSIPcommonclerkclerkTask @"common/clerk/clerkTask"
-//编写店员日志
+//编写员工日志
 #define SSIPcommonclerkfinishTask @"common/clerk/finishTask"
-//店员任务列表
+//员工任务列表
 #define SSIPcommonclerkclerkTaskList @"common/clerk/clerkTaskList"
 //员工管理->员工任务(查看更多)
 #define SSIPcommonclerkclerkTaskMore @"common/clerk/clerkTaskMore"
-//创建店员任务
+//创建员工任务
 #define SSIPcommonclerkcreateClerkTask @"common/clerk/createClerkTask"
-//店员通过沟通（跟进）客户数排名
+//员工通过沟通（跟进）客户数排名
 #define SSIPcommonclerkclerkOrderByFollowUpMemberCount @"common/clerk/clerkOrderByFollowUpMemberCount"
-//店员通过发表动态次数排名
+//员工通过发表动态次数排名
 #define SSIPcommonclerkclerkOrderByPublishCount @"common/clerk/clerkOrderByPublishCount"
-//店员通过沟通（跟进）数排名
+//员工通过沟通（跟进）数排名
 #define SSIPcommonclerkclerkOrderByFollowUpCount @"common/clerk/clerkOrderByFollowUpCount"
 //首页（返回所有数据）
 #define SSIPcommonclerkhomeAll @"common/clerk/homeAll"
@@ -161,13 +161,13 @@
 #define SSIPcommoncustomertransformationAnalysisChart @"common/customer/transformationAnalysisChart"
 //本月客户成长
 #define SSIPcommoncustomerthisMonthCustomerGrowth @"common/customer/thisMonthCustomerGrowth"
-//任务列表（店员的）
+//任务列表（员工的）
 #define SSIPcommonclerkTaskListByStatus @"common/clerk/clerkTaskListByStatus"
 //客户跟进（7天15天30天）统计
 #define SSIPcommonclerknotFollowUpMember @"common/clerk/notFollowUpMember"
 //近30天没跟进的用户
 #define SSIPcommonclerkthisMonthNotFollowUpMember @"common/clerk/thisMonthNotFollowUpMember"
-//任务列表（店员的）
+//任务列表（员工的）
 #define SSIPcommonclerkTaskListByStatus @"common/clerk/clerkTaskListByStatus"
 /*********************************************/
 
@@ -379,15 +379,15 @@
 /*********************************************/
 #pragma makr - clerk
 
-//店员列表
+//员工列表
 #define SSIPcommonMyClerk @"common/user/myClerk"
 //会员列表
 #define SSIPcommonMemberList @"common/user/memberList"
-//删除店员
+//删除员工
 #define SSIPcommonClerkToMember @"common/user/clerkToMember"
-//会员升级为店员
+//会员升级为员工
 #define SSIPcommonMemberToClerk @"common/user/memberToClerk"
-//店员排名列表
+//员工排名列表
 #define SSIPcommonMyClerkOrder @"common/user/myClerkOrder"
 /*********************************************/
 

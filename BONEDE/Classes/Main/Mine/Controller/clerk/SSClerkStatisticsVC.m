@@ -36,7 +36,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"店员佣金统计";
+    self.title = @"员工佣金统计";
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headrView;
     [self.refresh addRefreshView];

@@ -19,6 +19,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblF;
 @property (weak, nonatomic) IBOutlet UILabel *lblNotF;
 
+@property (weak, nonatomic) IBOutlet UILabel *lblLogToday;
+@property (weak, nonatomic) IBOutlet UILabel *lblLogWait;
+@property (weak, nonatomic) IBOutlet UILabel *lblLogExpire;
+
+
+
 @end
 
 @implementation SSClerkTaskCell
@@ -44,7 +50,19 @@
     _lblF.text = kMeUnNilStr(model.clerk_task.finish_task);
     _lblNotF.text = kMeUnNilStr(model.clerk_task.unfinish_task);
     _tableView.hidden = !kMeUnArr(_arrdata).count;
+    
+    _lblLogToday.text = kMeUnNilStr(model.clerk_task_service.clerk_today_log_count);
+    _lblLogWait.text = kMeUnNilStr(model.clerk_task_service.wait_servcie_count);
+    _lblLogExpire.text = kMeUnNilStr(model.clerk_task_service.overdue_count);
+    
     [self.tableView reloadData];
+}
+
+- (void)setLogUIWithArr:(SSNewClerkManngerClerkTaskServiceModel *)model{
+    
+    _lblLogToday.text = kMeUnNilStr(model.clerk_today_log_count);
+    _lblLogWait .text = kMeUnNilStr(model.wait_servcie_count);
+    _lblLogExpire.text = kMeUnNilStr(model.overdue_count);
 }
 
 #pragma mark - tableView deleagte and sourcedata
@@ -65,7 +83,7 @@
 }
 
 + (CGFloat)getCellHeightWithArr:(SSNewClerkManngerModel *)model{
-    CGFloat height = kSSClerkTaskCellOrgialHeight;
+    CGFloat height = kSSClerkTaskCellOrgialHeight + kSSClerkTaskCellOrgialAddHeight;
     NSArray *arr = kMeUnArr(model.clerk_task.clerk_finish_percent);
     height +=(kMeUnArr(arr).count * kSSClerkTaskContentCellHeight);
     return height;

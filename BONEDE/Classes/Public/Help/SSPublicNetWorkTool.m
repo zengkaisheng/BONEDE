@@ -426,9 +426,9 @@
 
 
 /*********************************************/
-#pragma makr - 新版本 顾客 图文 店员
+#pragma makr - 新版本 顾客 图文 员工
 
-// 店员
+// 员工
 //员工管理(返回所有内容)
 + (void)postgetclerkclerkManagementWithSuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure{
     NSString *url = kGetApiWithUrl(SSIPcommonclerkclerkManagement);
@@ -592,7 +592,7 @@
     }];
 }
 
-//创建店员任务
+//创建员工任务
 + (void)postgetSSIPcommoncreateClerkTaskWithmodel:(SSClerkCreateClerkTaskModel*)model SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure{
     NSString *url = kGetApiWithUrl(SSIPcommonclerkcreateClerkTask);
     NSDictionary *dic = [model mj_keyValues];
@@ -611,7 +611,7 @@
     }];
 }
 
-//编写店员日志
+//编写员工日志
 + (void)postgetSSIPfinishTaskWithmodel:(SSClerkFinishTaskModel*)model SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure{
     NSString *url = kGetApiWithUrl(SSIPcommonclerkfinishTask);
     NSDictionary *dic = [model mj_keyValues];
@@ -1394,7 +1394,7 @@
 
 /***************************************/
 #pragma mark - clerk
-//删除店员
+//删除员工
 + (void)postClerkToMemberWithmemberId:(NSString *)memberId successBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure{
     NSDictionary *dic = @{@"token":kMeUnNilStr(kCurrentUser.token),@"memberId":kMeUnNilStr(memberId)};
     NSString *url = kGetApiWithUrl(SSIPcommonClerkToMember);

@@ -30,7 +30,7 @@
 }
 
 - (void)initSomeThing{
-    self.title = @"添加店员";
+    self.title = @"添加员工";
     _consTopMargin.constant = kMeNavBarHeight;
     [_tableVIew registerNib:[UINib nibWithNibName:NSStringFromClass([SSAddClerkCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([SSAddClerkCell class])];
     _tableVIew.separatorStyle = UITableViewCellSeparatorStyleNone;

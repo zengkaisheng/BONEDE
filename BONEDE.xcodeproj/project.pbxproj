@@ -1052,6 +1052,7 @@
 		36F4484E228D78E800C0F10B /* SSMineAddBargainParModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F4484D228D78E800C0F10B /* SSMineAddBargainParModel.m */; };
 		36F44851228D790600C0F10B /* SSMineSignInParModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F44850228D790600C0F10B /* SSMineSignInParModel.m */; };
 		AEEAF03CAF17ABFF2413531F /* libPods-BONEDE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED495BEECBD911B852ED125F /* libPods-BONEDE.a */; };
+		EB8B8C232296717300132298 /* ViewPagerTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8B8C222296717300132298 /* ViewPagerTitleButton.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -2917,6 +2918,8 @@
 		36F44850228D790600C0F10B /* SSMineSignInParModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSMineSignInParModel.m; sourceTree = "<group>"; };
 		94E4AA90E3A06B04C6CC574A /* Pods-BONEDE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BONEDE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BONEDE/Pods-BONEDE.release.xcconfig"; sourceTree = "<group>"; };
 		B176FE37538BE71BBAF3F39C /* Pods-BONEDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BONEDE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BONEDE/Pods-BONEDE.debug.xcconfig"; sourceTree = "<group>"; };
+		EB8B8C212296717300132298 /* ViewPagerTitleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewPagerTitleButton.h; sourceTree = "<group>"; };
+		EB8B8C222296717300132298 /* ViewPagerTitleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewPagerTitleButton.m; sourceTree = "<group>"; };
 		ED495BEECBD911B852ED125F /* libPods-BONEDE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BONEDE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -6005,6 +6008,7 @@
 		36F1FBC42283BFE900459E88 /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				EB8B8C202296714700132298 /* ViewPagerTitleButton */,
 				36F1FBC62283BFE900459E88 /* CommonView */,
 				36F1FBFD2283BFE900459E88 /* TABAnimated */,
 				36F1FBFE2283BFE900459E88 /* CLInputToolbar */,
@@ -6260,6 +6264,15 @@
 				36F1FD442283C00300459E88 /* city.plist */,
 			);
 			path = Resource;
+			sourceTree = "<group>";
+		};
+		EB8B8C202296714700132298 /* ViewPagerTitleButton */ = {
+			isa = PBXGroup;
+			children = (
+				EB8B8C212296717300132298 /* ViewPagerTitleButton.h */,
+				EB8B8C222296717300132298 /* ViewPagerTitleButton.m */,
+			);
+			path = ViewPagerTitleButton;
 			sourceTree = "<group>";
 		};
 		F2EA51BB2B21E43B95CC76E8 /* Frameworks */ = {
@@ -6996,6 +7009,7 @@
 				36F1F7C22283BFB600459E88 /* SSActiveCell.m in Sources */,
 				36F1F8522283BFB600459E88 /* SSProductDetalsBuyedContentCell.m in Sources */,
 				36F1FCCB2283BFEA00459E88 /* TMessageController.m in Sources */,
+				EB8B8C232296717300132298 /* ViewPagerTitleButton.m in Sources */,
 				36F1F91C2283BFB700459E88 /* SSLogisticsCell.m in Sources */,
 				36F1FD0A2283BFEA00459E88 /* THDatePickerView.m in Sources */,
 				36F1F8AF2283BFB700459E88 /* SSNewMineHomeVC.m in Sources */,

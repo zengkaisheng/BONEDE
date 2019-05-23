@@ -198,7 +198,7 @@ const static CGFloat bottomBtnHeight = 47;
         return;
     }
     if(kCurrentUser.user_type == 5){
-        [SSShowViewTool showMessage:@"店员暂无此权限" view:self.view];
+        [SSShowViewTool showMessage:@"员工暂无此权限" view:self.view];
         return;
     }
     if([kMeUnNilStr(_model.tls_id) isEqualToString:kCurrentUser.tls_data.tls_id]){

@@ -71,7 +71,7 @@
 
 
 /*********************************************/
-#pragma makr - 新版本 顾客 图文 店员
+#pragma makr - 新版本 顾客 图文 员工
 //顾客
 //员工管理(返回所有内容)
 + (void)postgetclerkclerkManagementWithSuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
@@ -90,9 +90,9 @@
 + (void)postgetSSIPcommonclerkserviceLogWithdate:(NSString*)date SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
 //任务祥情
 + (void)postgetclerktaskDetailWithTaskId:(NSString*)taskId SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
-//创建店员任务
+//创建员工任务
 + (void)postgetSSIPcommoncreateClerkTaskWithmodel:(SSClerkCreateClerkTaskModel*)model SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
-//编写店员日志
+//编写员工日志
 + (void)postgetSSIPfinishTaskWithmodel:(SSClerkFinishTaskModel*)model SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
 
 //员工管理->员工日志
@@ -250,9 +250,9 @@
 
 /***************************************/
 #pragma mark - clerk
-//删除店员
+//删除员工
 + (void)postClerkToMemberWithmemberId:(NSString *)memberId successBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
-//会员升级为店员
+//会员升级为员工
 + (void)posMemberToClerkWithmemberId:(NSString *)memberId successBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
 
 /***************************************/

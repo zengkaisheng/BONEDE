@@ -70,7 +70,7 @@ const static CGFloat kBootomViewHeight = 90;
         return;
     }
     if(kMeUnArr(_model.arrclerk_id).count == 0){
-        [SSShowViewTool showMessage:@"请选择店员" view:kMeCurrentWindow];
+        [SSShowViewTool showMessage:@"请选择员工" view:kMeCurrentWindow];
         return;
     }
     _model.clerk_id =[_model.arrclerk_id componentsJoinedByString:@","];

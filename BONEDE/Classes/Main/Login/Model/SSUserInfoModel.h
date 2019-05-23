@@ -58,7 +58,7 @@ static NSString *kTokenKey = @"kTokenKey";
 
 @property (nonatomic, copy) NSString *rongcloud_token;
 
-//用户身份 4普通会员 3体验店 2营销中心 1售后中心 5店员
+//用户身份 4普通会员 3体验店 2营销中心 1售后中心 5员工
 @property (nonatomic, assign) NSInteger user_type;
 @property (nonatomic, assign) SSClientTypeStyle client_type;
 

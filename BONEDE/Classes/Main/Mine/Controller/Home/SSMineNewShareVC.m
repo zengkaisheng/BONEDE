@@ -26,7 +26,7 @@
 //        _lev = lev;
         switch (kCurrentUser.client_type ) {
             case SSClientTypeClerkStyle:{
-                _lev = [NSString stringWithFormat:@"当前等级:店员"];
+                _lev = [NSString stringWithFormat:@"当前等级:员工"];
             }
                 break;
             case SSClientBTypeStyle:{

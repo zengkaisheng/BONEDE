@@ -78,7 +78,7 @@
             [strongSelf.navigationController popViewControllerAnimated:YES];
         }];
     }else{
-        //B 店员 端
+        //B 员工 端
         [SSPublicNetWorkTool postReserveDetailBlWithReserve_sn:_reserve_sn successBlock:^(ZLRequestResponse *responseObject) {
             kMeSTRONGSELF
             strongSelf->_detaliModel =  [SSAppointDetailModel mj_objectWithKeyValues:responseObject.data];

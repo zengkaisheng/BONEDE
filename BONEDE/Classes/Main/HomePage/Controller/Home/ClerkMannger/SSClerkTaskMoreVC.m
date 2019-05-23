@@ -21,7 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.title = @"店员任务";
+    self.title = @"员工任务";
     [self.view addSubview:self.tableView];
     [self.refresh addRefreshView];
 }
