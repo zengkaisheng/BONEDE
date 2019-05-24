@@ -1053,6 +1053,8 @@
 		36F44851228D790600C0F10B /* SSMineSignInParModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F44850228D790600C0F10B /* SSMineSignInParModel.m */; };
 		AEEAF03CAF17ABFF2413531F /* libPods-BONEDE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED495BEECBD911B852ED125F /* libPods-BONEDE.a */; };
 		EB8B8C232296717300132298 /* ViewPagerTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8B8C222296717300132298 /* ViewPagerTitleButton.m */; };
+		EB9F946C2297CDA50049CFFD /* SSChooseTerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F946B2297CDA50049CFFD /* SSChooseTerminalView.m */; };
+		EB9F946F2297CE3A0049CFFD /* SSChooseTerminalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F946E2297CE3A0049CFFD /* SSChooseTerminalVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -2920,6 +2922,10 @@
 		B176FE37538BE71BBAF3F39C /* Pods-BONEDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BONEDE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BONEDE/Pods-BONEDE.debug.xcconfig"; sourceTree = "<group>"; };
 		EB8B8C212296717300132298 /* ViewPagerTitleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewPagerTitleButton.h; sourceTree = "<group>"; };
 		EB8B8C222296717300132298 /* ViewPagerTitleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewPagerTitleButton.m; sourceTree = "<group>"; };
+		EB9F946A2297CDA50049CFFD /* SSChooseTerminalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSChooseTerminalView.h; sourceTree = "<group>"; };
+		EB9F946B2297CDA50049CFFD /* SSChooseTerminalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSChooseTerminalView.m; sourceTree = "<group>"; };
+		EB9F946D2297CE3A0049CFFD /* SSChooseTerminalVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSChooseTerminalVC.h; sourceTree = "<group>"; };
+		EB9F946E2297CE3A0049CFFD /* SSChooseTerminalVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSChooseTerminalVC.m; sourceTree = "<group>"; };
 		ED495BEECBD911B852ED125F /* libPods-BONEDE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BONEDE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -3171,6 +3177,8 @@
 				36F1F2072283BFB300459E88 /* SSBynamicPublishVC.xib */,
 				36F1F2092283BFB300459E88 /* SSBynamicHomeVC.h */,
 				36F1F2062283BFB300459E88 /* SSBynamicHomeVC.m */,
+				EB9F946D2297CE3A0049CFFD /* SSChooseTerminalVC.h */,
+				EB9F946E2297CE3A0049CFFD /* SSChooseTerminalVC.m */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -6064,6 +6072,8 @@
 				36F1FBD72283BFE900459E88 /* LMJScrollTextView2.m */,
 				36F1FBF82283BFE900459E88 /* SSCustomActionSheet.h */,
 				36F1FBD82283BFE900459E88 /* SSCustomActionSheet.m */,
+				EB9F946A2297CDA50049CFFD /* SSChooseTerminalView.h */,
+				EB9F946B2297CDA50049CFFD /* SSChooseTerminalView.m */,
 				36F1FBDF2283BFE900459E88 /* HDAlertView */,
 				36F1FBEB2283BFE900459E88 /* YBPopupMenu */,
 				3672A4C4228DA5370066F06E /* SSTimePickerView.h */,
@@ -6871,6 +6881,7 @@
 				36F1F78C2283BFB600459E88 /* SSAddAddressAttrModel.m in Sources */,
 				36F1FD0C2283BFEA00459E88 /* SSDiscountCouponDottedLine.m in Sources */,
 				36F1F8D62283BFB700459E88 /* SSAIDataHomeVC.m in Sources */,
+				EB9F946C2297CDA50049CFFD /* SSChooseTerminalView.m in Sources */,
 				36F1FCBD2283BFEA00459E88 /* TFaceCell.m in Sources */,
 				36F1F8442283BFB600459E88 /* SSThridProductDetailsTipCell.m in Sources */,
 				36F1F8422283BFB600459E88 /* SSThridProductDetailsRushCell.m in Sources */,
@@ -7131,6 +7142,7 @@
 				36F1FCEC2283BFEA00459E88 /* SSHomePageSaveModel.m in Sources */,
 				36F1F7682283BFB600459E88 /* SSClerkDiagnosisResultClerkVC.m in Sources */,
 				36F1F8A52283BFB700459E88 /* SSCompandNoticeVC.m in Sources */,
+				EB9F946F2297CE3A0049CFFD /* SSChooseTerminalVC.m in Sources */,
 				36F1F7CB2283BFB600459E88 /* SSNewHomeMainCell.m in Sources */,
 				36F1F8F82283BFB700459E88 /* SSAddGoodDetailModel.m in Sources */,
 				36F1F1F42283BEC400459E88 /* main.m in Sources */,

@@ -14,12 +14,17 @@
 #import "YBImageBrowser.h"
 #import "SSBynamicPublishGridContentView.h"
 
+#import "SSChooseTerminalView.h"
+#import "SSChooseTerminalVC.h"
+
 const static CGFloat SSBynamicPublishVCTextHeight = 135;
 
 @interface SSBynamicPublishVC ()<TZImagePickerControllerDelegate,YBImageBrowserDataSource>{
     NSInteger _currentIndex;
     NSMutableArray *_arrImage;
     NSString *_token;
+    NSInteger _selectedTerminal;
+    BOOL _isVisable; //是否仅店员可见
     BOOL _isError;
 }
 //@property (weak, nonatomic) IBOutlet SSBynamicPublishGridView *gridView;
@@ -30,6 +35,8 @@ const static CGFloat SSBynamicPublishVCTextHeight = 135;
 @property (nonatomic , strong) SSBynamicPublishGridView *gridView;
 @property (strong, nonatomic) NSMutableArray *arrModel;
 @property (nonatomic, strong) UIButton *btnRight;
+
+@property (nonatomic , strong) SSChooseTerminalView *chooseView;
 @end
 
 @implementation SSBynamicPublishVC
@@ -39,6 +46,8 @@ const static CGFloat SSBynamicPublishVCTextHeight = 135;
     self.title = @"发表";
     kMeWEAKSELF
     _isError = NO;
+    _isVisable = YES;
+    _selectedTerminal = 0;
     MBProgressHUD *HUD = [SSPublicNetWorkTool commitWithHUD:@""];
     [SSPublicNetWorkTool postgetQiuNiuTokkenWithSuccessBlock:^(ZLRequestResponse *responseObject) {
         [HUD hideAnimated:YES];
@@ -59,6 +68,7 @@ const static CGFloat SSBynamicPublishVCTextHeight = 135;
     _scrollView.contentSize = CGSizeMake(SCREEN_WIDTH, sheight);
     [_scrollView addSubview:self.textView];
     [_scrollView addSubview:self.gridView];
+    [_scrollView addSubview:self.chooseView];
     [self reloadGridView];
     // Do any additional setup after loading the view from its nib.
 }
@@ -127,7 +137,8 @@ const static CGFloat SSBynamicPublishVCTextHeight = 135;
                                                                      error:&error];
                 NSString *jsonString = [[NSString alloc] initWithData:jsonData
                                                              encoding:NSUTF8StringEncoding];
-                [SSPublicNetWorkTool postdynamicVotingCommentWithConten:content images:jsonString successBlock:^(ZLRequestResponse *responseObject) {
+                NSString *visable = strongSelf->_isVisable?@"1":@"2";
+                [SSPublicNetWorkTool postdynamicVotingCommentWithConten:content images:jsonString terminal:[NSString stringWithFormat:@"%ld",strongSelf->_selectedTerminal] onlyClerkView:visable successBlock:^(ZLRequestResponse *responseObject) {
                     kMeSTRONGSELF
                     kMeCallBlock(strongSelf.publishSucessBlock);
                     [strongSelf.navigationController popViewControllerAnimated:YES];
@@ -256,6 +267,28 @@ const static CGFloat SSBynamicPublishVCTextHeight = 135;
         _textView.textView.textColor = kSSblack;
     }
     return _textView;
+}
+
+- (SSChooseTerminalView *)chooseView {
+    if (!_chooseView) {
+        _chooseView = [[SSChooseTerminalView alloc] initWithFrame:CGRectMake(0, 401-kMeNavBarHeight, SCREEN_WIDTH, 104)];
+        kMeWEAKSELF
+        _chooseView.chooseBlock = ^{
+            kMeSTRONGSELF
+            SSChooseTerminalVC *vc = [[SSChooseTerminalVC alloc] init];
+            vc.tag = strongSelf->_selectedTerminal;
+            vc.indexBlock = ^(NSInteger index) {
+                strongSelf->_selectedTerminal = index;
+                [strongSelf->_chooseView setTerminalWithIndex:index];
+            };
+            [strongSelf.navigationController pushViewController:vc animated:YES];
+        };
+        _chooseView.visiableBlock = ^(BOOL isVisiable) {
+            kMeSTRONGSELF
+            strongSelf->_isVisable = isVisiable;
+        };
+    }
+    return _chooseView;
 }
 
 @end
