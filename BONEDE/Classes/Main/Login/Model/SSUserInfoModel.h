@@ -56,6 +56,8 @@ static NSString *kTokenKey = @"kTokenKey";
 @property (nonatomic, copy) NSString *mobile;
 @property (nonatomic, copy) NSString *name;
 
+@property (nonatomic, copy) NSString *store_id;
+
 @property (nonatomic, copy) NSString *rongcloud_token;
 
 //用户身份 4普通会员 3体验店 2营销中心 1售后中心 5员工

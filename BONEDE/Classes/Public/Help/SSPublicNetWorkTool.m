@@ -1070,6 +1070,23 @@
     }];
 }
 
++ (void)postUserSendRemindMsgWithStore_id:(NSString *)store_id uid:(NSString *)uid successBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure {
+    NSDictionary *dic = @{@"store_id":kMeUnNilStr(store_id),@"uid":kMeUnNilStr(uid),@"token":kMeUnNilStr(kCurrentUser.token)};
+    NSString *url = kGetApiWithUrl(SSIPcommongUserSendRemindMsg);
+    MBProgressHUD *HUD = [self commitWithHUD:@""];
+    [THTTPManager postWithParameter:dic strUrl:url success:^(ZLRequestResponse *responseObject) {
+        [HUD hideAnimated:YES];
+        kMeCallBlock(successBlock,responseObject);
+    } failure:^(id error) {
+        if([error isKindOfClass:[ZLRequestResponse class]]){
+            ZLRequestResponse *res = (ZLRequestResponse*)error;
+            [SSShowViewTool SHOWHUDWITHHUD:HUD test:kMeUnNilStr(res.message)];
+        }else{
+            [SSShowViewTool SHOWHUDWITHHUD:HUD test:kApiError];
+        }
+    }];
+}
+
 /*********************************************/
 
 /*********************************************/

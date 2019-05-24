@@ -19,6 +19,7 @@
 @interface SSRCConversationVC ()<TChatControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIDocumentPickerDelegate>
 @property (nonatomic, strong) TChatController *chat;
 @property (nonatomic, strong) TConversationCellData *conversation;
+@property (nonatomic, strong) UIButton *btnRight;
 
 @end
 
@@ -58,6 +59,9 @@
         }
     }else{
         [self initSomeThing];
+    }
+    if (!self.isHideRemindBtn) {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.btnRight];
     }
 }
 
@@ -189,6 +193,32 @@
     [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (void)remindAction {
+//    kMeWEAKSELF 
+    NSString *tlsId =kMeUnNilStr(self.conversation.convId);
+    [SSPublicNetWorkTool postUserSendRemindMsgWithStore_id:kMeUnNilStr(kCurrentUser.store_id) uid:tlsId successBlock:^(ZLRequestResponse *responseObject) {
+        MBProgressHUD *HUD = [MBProgressHUD showHUDAddedTo:kMeCurrentWindow animated:YES];
+        HUD.label.text = @"";
+        HUD.userInteractionEnabled = YES;
+        [SSShowViewTool SHOWHUDWITHHUD:HUD test:kMeUnNilStr(responseObject.message)];
+    } failure:^(id object) {
 
+    }];
+}
+
+- (UIButton *)btnRight{
+    if(!_btnRight){
+        _btnRight= [UIButton buttonWithType:UIButtonTypeCustom];
+        [_btnRight setTitle:@"提醒" forState:UIControlStateNormal];
+        [_btnRight setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        _btnRight.backgroundColor = kSSPink;
+        _btnRight.cornerRadius = 4;
+        _btnRight.clipsToBounds = YES;
+        _btnRight.frame = CGRectMake(0, 0, 57, 30);
+        _btnRight.titleLabel.font = kMeFont(15);
+        [_btnRight addTarget:self action:@selector(remindAction) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _btnRight;
+}
 
 @end

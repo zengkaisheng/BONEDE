@@ -58,6 +58,7 @@
 {
     SSRCConversationVC *chat = [[SSRCConversationVC alloc] initWIthconversationData:conversation];
     //    chat.conversation = conversation;
+    chat.isHideRemindBtn = NO;
     [self.navigationController pushViewController:chat animated:YES];
 }
 - (void)toCustom{
@@ -70,6 +71,7 @@
             data.convType = TConv_Type_C2C;
             data.title = @"棒的客服";
             SSRCConversationVC *chat = [[SSRCConversationVC alloc] initWIthconversationData:data];
+            chat.isHideRemindBtn = YES;
             [self.navigationController pushViewController:chat animated:YES];
         }
     }else{
@@ -87,6 +89,7 @@
                     data.convType = TConv_Type_C2C;
                     data.title = @"棒的客服";
                     SSRCConversationVC *chat = [[SSRCConversationVC alloc] initWIthconversationData:data];
+                    chat.isHideRemindBtn = YES;
                     [strongSelf.navigationController pushViewController:chat animated:YES];
                 });
             }

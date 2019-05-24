@@ -259,6 +259,12 @@
 #define SSIPcommongUserInfoByTls @"common/user/getUserInfoByTls"
 
 /*********************************************/
+
+/*********************************************/
+//消息提醒
+#define SSIPcommongUserSendRemindMsg @"common/user/sendRemindMsg"
+
+/*********************************************/
 #pragma makr - 动态
 //动态列表
 #define SSIPcommongetDynamicList @"common/dynamic/getDynamicList"

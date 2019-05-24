@@ -12,6 +12,9 @@
 #import "TChatController.h"
 
 @interface SSRCConversationVC : SSBaseVC
+
+@property (nonatomic, assign) BOOL isHideRemindBtn;
+
 - (instancetype)initWIthconversationData:(TConversationCellData *)data;
 @end
 

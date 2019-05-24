@@ -176,6 +176,8 @@
 
 + (void)getUserGetTokenByFourWithSuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
 
++ (void)postUserSendRemindMsgWithStore_id:(NSString *)store_id uid:(NSString *)uid successBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
+
 /*********************************************/
 #pragma makr - 动态
 //上传图片
