@@ -209,6 +209,18 @@
 #define SSIPcommonaisetMemberLabel @"common/user/setMemberLabel"
 //跟进投票用户（点击打电话时调用）
 #define SSIPcommonaifollowUpMember @"common/followup/followUpMember"
+//Ai雷达点发消息（点击发消息时调用）
+#define SSIPcommonaiAddCommunicationLog @"common/airadar/addCommunicationLog"
+
+
+//行为--查看店铺
+#define SSIPcommonAIBehaviorVisitStore @"common/airadar/behaviorVisitStore"
+//行为--分享店铺
+#define SSIPcommonAIBehaviorShareStore @"common/airadar/behaviorShareStore"
+//行为--查看拼团活动
+#define SSIPcommonAIBehaviorLookGroupBuyActivity @"common/airadar/behaviorLookGroupBuyActivity"
+//行为--查看服务项目
+#define SSIPcommonAIBehaviorLookServices @"common/airadar/behaviorLookServices"
 /*********************************************/
 
 /*********************************************/

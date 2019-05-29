@@ -56,8 +56,7 @@
     
     //小程序跟踪view
     self.BGView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight-kMeTabBarHeight)];
-//    self.BGView.backgroundColor = [UIColor colorWithHexString:@"f4f4f4"];
-    self.BGView.backgroundColor = [UIColor redColor];
+    self.BGView.backgroundColor = [UIColor colorWithHexString:@"f4f4f4"];
     
     //小程序内部view
     _arrType = @[@"时间",@"行为",@" 人 "];
@@ -106,9 +105,15 @@
     
     ViewPagerTitleButton *btn1 = [self createButtonWithTitle:@"小程序跟踪" andTag:300 frame:CGRectMake(0, 0, SCREEN_WIDTH/2, kCategoryViewHeight)];
     btn1.selected = YES;
+    
     ViewPagerTitleButton *btn2 = [self createButtonWithTitle:@"获客图文跟踪" andTag:301 frame:CGRectMake(SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2, kCategoryViewHeight)];
     [titleView addSubview:btn1];
     [titleView addSubview:btn2];
+    
+    UIView *lineV = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-0.5, 9, 1, 25)];
+    lineV.backgroundColor = [UIColor colorWithHexString:@"#DEDEDE"];
+    [titleView addSubview:lineV];
+    
     [self.view addSubview:titleView];
 }
 

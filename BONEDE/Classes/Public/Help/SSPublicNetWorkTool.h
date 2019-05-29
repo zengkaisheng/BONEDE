@@ -101,6 +101,8 @@
 + (void)postgetSSIPcommonclerknotFollowUpMemberWithSuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
 //跟进投票用户（点击打电话时调用） 1投票活动2海报3文章4访问店铺
 + (void)postgetSSIPcommonclerknotFollowUpMemberWithUid:(NSString*)uid type:(NSInteger)type SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
+//Ai雷达点“发消息”要调用
++ (void)postgetSSIPcommonclerkAddCommunicationLogWithUid:(NSString*)uid SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
 
 //可视化员工分析系统
 + (void)postgetSSIPcommonclerkAnalyzeWithUid:(NSString*)uid SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;

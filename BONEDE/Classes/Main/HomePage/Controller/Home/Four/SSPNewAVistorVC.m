@@ -43,12 +43,13 @@
     self.categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, kCategoryViewHeight)];
     //    self.categoryView.lineStyle = JXCategoryLineStyle_None;
     JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
-    lineView.indicatorLineViewColor = kSSPink;
+    lineView.indicatorLineViewColor = kSS333333;
+    lineView.indicatorLineViewHeight = 2;
     self.categoryView.indicators = @[lineView];
     
     self.categoryView.titles = _arrType;
     self.categoryView.delegate = self;
-    self.categoryView.titleSelectedColor = kSSPink;
+    self.categoryView.titleSelectedColor = kSS333333;
     self.categoryView.contentScrollView = self.scrollView;
     [self.view addSubview:self.categoryView];
     //self.scrollView.contentOffset = CGPointMake(SCREEN_WIDTH * _currentType, 0);

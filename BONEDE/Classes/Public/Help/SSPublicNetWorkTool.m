@@ -574,6 +574,21 @@
     }];
 }
 
+//Ai雷达点“发消息”要调（点击发消息时调用)
++ (void)postgetSSIPcommonclerkAddCommunicationLogWithUid:(NSString*)uid SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure{
+    NSString *url = kGetApiWithUrl(SSIPcommonaiAddCommunicationLog);
+    MBProgressHUD *HUD = [self commitWithHUD:@""];
+    [THTTPManager postWithParameter:@{@"token":kMeUnNilStr(kCurrentUser.token),@"uid":kMeUnNilStr(uid)} strUrl:url success:^(ZLRequestResponse *responseObject) {
+        //        [HUD hideAnimated:YES];
+        [HUD hideAnimated:YES];
+        
+        kMeCallBlock(successBlock,responseObject);
+    } failure:^(id error) {
+        [HUD hideAnimated:YES];
+        kMeCallBlock(failure,error);
+    }];
+}
+
 //任务祥情
 + (void)postgetclerktaskDetailWithTaskId:(NSString*)taskId SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure{
     NSString *url = kGetApiWithUrl(SSIPcommonclertaskDetail);

@@ -10,6 +10,7 @@
 #import "SSAIDataHomeActiveHomeView.h"
 #import "SSAIDataHomeActiveHomeCell.h"
 #import "SSAIDataHomeActiveModel.h"
+#import "SSAICustomerCheckDetailVC.h"
 
 @interface SSAIDataHomeActiveVC ()<UITableViewDelegate, UITableViewDataSource>{
     NSArray *_arrData;
@@ -90,6 +91,39 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
 //    SSAIDataHomeTimeModel *model = self.refresh.arrData[indexPath.row];
+    SSAIDataHomeActiveHomeCellType type = [_arrData[indexPath.section][indexPath.row] integerValue];
+    switch (type) {
+        case SSAIDataHomeActiveHomeCellcheckStoreType:
+        {
+            SSAICustomerCheckDetailVC *detailVC = [[SSAICustomerCheckDetailVC alloc] initWithUrl:SSIPcommonAIBehaviorVisitStore type:0];
+            detailVC.title = @"查看店铺详情";
+            [self.navigationController pushViewController:detailVC animated:YES];
+        }
+            break;
+        case SSAIDataHomeActiveHomeCellshareStoreType:
+        {
+            SSAICustomerCheckDetailVC *detailVC = [[SSAICustomerCheckDetailVC alloc] initWithUrl:SSIPcommonAIBehaviorShareStore type:1];
+            detailVC.title = @"分享店铺详情";
+            [self.navigationController pushViewController:detailVC animated:YES];
+        }
+            break;
+        case SSAIDataHomeActiveHomeCellcheckpintuanType:
+        {
+            SSAICustomerCheckDetailVC *detailVC = [[SSAICustomerCheckDetailVC alloc] initWithUrl:SSIPcommonAIBehaviorLookGroupBuyActivity type:2];
+            detailVC.title = @"查看拼团活动详情";
+            [self.navigationController pushViewController:detailVC animated:YES];
+        }
+            break;
+        case SSAIDataHomeActiveHomeCellcheckServerType:
+        {
+            SSAICustomerCheckDetailVC *detailVC = [[SSAICustomerCheckDetailVC alloc] initWithUrl:SSIPcommonAIBehaviorLookServices type:3];
+            detailVC.title = @"查看服务项目";
+            [self.navigationController pushViewController:detailVC animated:YES];
+        }
+            break;
+        default:
+            break;
+    }
     
 }
 

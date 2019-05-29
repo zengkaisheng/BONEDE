@@ -1052,6 +1052,10 @@
 		36F4484E228D78E800C0F10B /* SSMineAddBargainParModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F4484D228D78E800C0F10B /* SSMineAddBargainParModel.m */; };
 		36F44851228D790600C0F10B /* SSMineSignInParModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 36F44850228D790600C0F10B /* SSMineSignInParModel.m */; };
 		AEEAF03CAF17ABFF2413531F /* libPods-BONEDE.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED495BEECBD911B852ED125F /* libPods-BONEDE.a */; };
+		EB38B85F229EA89E00590B18 /* SSAICustomerCheckDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB38B85E229EA89E00590B18 /* SSAICustomerCheckDetailVC.m */; };
+		EB38B862229EADD900590B18 /* SSAICustomerCheckDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB38B861229EADD900590B18 /* SSAICustomerCheckDetailModel.m */; };
+		EB38B866229EB22200590B18 /* SSAICustomerCheckDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB38B864229EB22200590B18 /* SSAICustomerCheckDetailCell.m */; };
+		EB38B867229EB22200590B18 /* SSAICustomerCheckDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB38B865229EB22200590B18 /* SSAICustomerCheckDetailCell.xib */; };
 		EB8B8C232296717300132298 /* ViewPagerTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8B8C222296717300132298 /* ViewPagerTitleButton.m */; };
 		EB9F946C2297CDA50049CFFD /* SSChooseTerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F946B2297CDA50049CFFD /* SSChooseTerminalView.m */; };
 		EB9F946F2297CE3A0049CFFD /* SSChooseTerminalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F946E2297CE3A0049CFFD /* SSChooseTerminalVC.m */; };
@@ -2920,6 +2924,13 @@
 		36F44850228D790600C0F10B /* SSMineSignInParModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSMineSignInParModel.m; sourceTree = "<group>"; };
 		94E4AA90E3A06B04C6CC574A /* Pods-BONEDE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BONEDE.release.xcconfig"; path = "Pods/Target Support Files/Pods-BONEDE/Pods-BONEDE.release.xcconfig"; sourceTree = "<group>"; };
 		B176FE37538BE71BBAF3F39C /* Pods-BONEDE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BONEDE.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BONEDE/Pods-BONEDE.debug.xcconfig"; sourceTree = "<group>"; };
+		EB38B85D229EA89E00590B18 /* SSAICustomerCheckDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAICustomerCheckDetailVC.h; sourceTree = "<group>"; };
+		EB38B85E229EA89E00590B18 /* SSAICustomerCheckDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAICustomerCheckDetailVC.m; sourceTree = "<group>"; };
+		EB38B860229EADD900590B18 /* SSAICustomerCheckDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAICustomerCheckDetailModel.h; sourceTree = "<group>"; };
+		EB38B861229EADD900590B18 /* SSAICustomerCheckDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAICustomerCheckDetailModel.m; sourceTree = "<group>"; };
+		EB38B863229EB22200590B18 /* SSAICustomerCheckDetailCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSAICustomerCheckDetailCell.h; sourceTree = "<group>"; };
+		EB38B864229EB22200590B18 /* SSAICustomerCheckDetailCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSAICustomerCheckDetailCell.m; sourceTree = "<group>"; };
+		EB38B865229EB22200590B18 /* SSAICustomerCheckDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSAICustomerCheckDetailCell.xib; sourceTree = "<group>"; };
 		EB8B8C212296717300132298 /* ViewPagerTitleButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewPagerTitleButton.h; sourceTree = "<group>"; };
 		EB8B8C222296717300132298 /* ViewPagerTitleButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewPagerTitleButton.m; sourceTree = "<group>"; };
 		EB9F946A2297CDA50049CFFD /* SSChooseTerminalView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSChooseTerminalView.h; sourceTree = "<group>"; };
@@ -4328,6 +4339,8 @@
 				36F1F50A2283BFB500459E88 /* SSAIDataHomeVC.m */,
 				36F1F5162283BFB500459E88 /* SSAIHomeVC.h */,
 				36F1F50B2283BFB500459E88 /* SSAIHomeVC.m */,
+				EB38B85D229EA89E00590B18 /* SSAICustomerCheckDetailVC.h */,
+				EB38B85E229EA89E00590B18 /* SSAICustomerCheckDetailVC.m */,
 			);
 			path = AI;
 			sourceTree = "<group>";
@@ -4520,6 +4533,8 @@
 				36F1F5892283BFB500459E88 /* SSAiCustomerDetailModel.m */,
 				36F1F5882283BFB500459E88 /* SSAIDataHomeActiveModel.h */,
 				36F1F5832283BFB500459E88 /* SSAIDataHomeActiveModel.m */,
+				EB38B860229EADD900590B18 /* SSAICustomerCheckDetailModel.h */,
+				EB38B861229EADD900590B18 /* SSAICustomerCheckDetailModel.m */,
 			);
 			path = AI;
 			sourceTree = "<group>";
@@ -4817,6 +4832,9 @@
 				36F1F64F2283BFB500459E88 /* SSAiCustomerDetailCell.h */,
 				36F1F6582283BFB500459E88 /* SSAiCustomerDetailCell.m */,
 				36F1F65A2283BFB500459E88 /* SSAiCustomerDetailCell.xib */,
+				EB38B863229EB22200590B18 /* SSAICustomerCheckDetailCell.h */,
+				EB38B864229EB22200590B18 /* SSAICustomerCheckDetailCell.m */,
+				EB38B865229EB22200590B18 /* SSAICustomerCheckDetailCell.xib */,
 			);
 			path = AI;
 			sourceTree = "<group>";
@@ -6515,6 +6533,7 @@
 				36F1F9292283BFB700459E88 /* SSMineNewShareView.xib in Resources */,
 				36F1F8752283BFB700459E88 /* SSArticleAdCell.xib in Resources */,
 				36F1F9EB2283BFB800459E88 /* SSStoreHomeCell.xib in Resources */,
+				EB38B867229EB22200590B18 /* SSAICustomerCheckDetailCell.xib in Resources */,
 				36F1F9602283BFB700459E88 /* SSAddGoodBasicCell.xib in Resources */,
 				36F1F8212283BFB600459E88 /* SSCheckClerkLogCell.xib in Resources */,
 				36F1F7D92283BFB600459E88 /* SSHomeSearchView.xib in Resources */,
@@ -6952,6 +6971,7 @@
 				36F1F7E72283BFB600459E88 /* SSThridHomeTimeSecionView.m in Sources */,
 				36F1F75A2283BFB600459E88 /* SSEditClerkInfoVC.m in Sources */,
 				36F1F9482283BFB700459E88 /* SSMineExchangeCell.m in Sources */,
+				EB38B85F229EA89E00590B18 /* SSAICustomerCheckDetailVC.m in Sources */,
 				36F1FD162283BFEA00459E88 /* SSAlertView.m in Sources */,
 				36F1F9572283BFB700459E88 /* SSAddGoodGoodAttributeCell.m in Sources */,
 				36F1F84D2283BFB600459E88 /* SSThridProductDetailsCommentCell.m in Sources */,
@@ -7087,6 +7107,7 @@
 				36F1FC742283BFEA00459E88 /* AAColor.m in Sources */,
 				36F1F8862283BFB700459E88 /* SSDistributionMoneyView.m in Sources */,
 				36F1FC802283BFEA00459E88 /* JXCategoryIndicatorBackgroundView.m in Sources */,
+				EB38B862229EADD900590B18 /* SSAICustomerCheckDetailModel.m in Sources */,
 				36F1F7562283BFB600459E88 /* SSSNewHomeActiveVC.m in Sources */,
 				36F1F7F62283BFB600459E88 /* SSClerkSortContentCell.m in Sources */,
 				36F1FCD42283BFEA00459E88 /* TGroupCommonCell.m in Sources */,
@@ -7345,6 +7366,7 @@
 				36F1FC882283BFEA00459E88 /* JXCategoryTitleImageCell.m in Sources */,
 				36F1F78D2283BFB600459E88 /* SSSNewHomeStyle.m in Sources */,
 				36F1F7302283BFB600459E88 /* SSGuideVC.m in Sources */,
+				EB38B866229EB22200590B18 /* SSAICustomerCheckDetailCell.m in Sources */,
 				36F1F8C22283BFB700459E88 /* SSGoodManngerSpecVC.m in Sources */,
 				36F1FD142283BFEA00459E88 /* LMJScrollTextView2.m in Sources */,
 				36F1F9CD2283BFB700459E88 /* BankTransferAccountsVC.m in Sources */,
