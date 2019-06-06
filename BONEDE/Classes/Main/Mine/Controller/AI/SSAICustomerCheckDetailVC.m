@@ -42,7 +42,7 @@
 - (NSDictionary *)requestParameter{
     NSMutableDictionary *dic = [NSMutableDictionary dictionary];
     dic[@"token"] = kMeUnNilStr(kCurrentUser.token);
-    dic[@"day_type"] = [NSString stringWithFormat:@"%ld",_type];
+    dic[@"day_type"] = [NSString stringWithFormat:@"%ld",(long)_type];
     return dic;
 }
 

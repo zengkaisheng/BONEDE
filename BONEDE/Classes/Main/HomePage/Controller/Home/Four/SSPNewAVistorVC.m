@@ -27,10 +27,10 @@
     [super viewDidLoad];
     self.title = @"获客图文";
     _arrType = @[@"获客海报",@"获客文章"] ;
-    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kMeNavBarHeight, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight)];
+    self.scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, kCategoryViewHeight+(self.isInAI?0:kMeNavBarHeight), SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight-(self.isInAI?kMeTabBarHeight:0))];
     self.scrollView.delegate = self;
     self.scrollView.pagingEnabled = YES;
-    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH *_arrType.count,  SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight);
+    self.scrollView.contentSize = CGSizeMake(SCREEN_WIDTH *_arrType.count, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight-(self.isInAI?kMeTabBarHeight:0));
     self.scrollView.bounces = NO;
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.showsHorizontalScrollIndicator = NO;
@@ -40,7 +40,7 @@
     [self.view addSubview:self.scrollView];
     
     //1、初始化JXCategoryTitleView
-    self.categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, kCategoryViewHeight)];
+    self.categoryView = [[JXCategoryTitleView alloc] initWithFrame:CGRectMake(0,self.isInAI?0:kMeNavBarHeight, SCREEN_WIDTH, kCategoryViewHeight)];
     //    self.categoryView.lineStyle = JXCategoryLineStyle_None;
     JXCategoryIndicatorLineView *lineView = [[JXCategoryIndicatorLineView alloc] init];
     lineView.indicatorLineViewColor = kSS333333;
@@ -62,7 +62,7 @@
     if(!_posterVC){
         _posterVC = [[SSPNewAVistorContentVC alloc]initWithPoster];
         _posterVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
-        _posterVC.view.frame = CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight);
+        _posterVC.view.frame = CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight-(self.isInAI?kMeTabBarHeight:0));
         [self addChildViewController:_posterVC];
     }
     return _posterVC;
@@ -71,7 +71,7 @@
 - (SSPNewAVistorContentVC *)articleVC{
     if(!_articleVC){
         _articleVC = [[SSPNewAVistorContentVC alloc]initWithArticel];
-        _articleVC.view.frame = CGRectMake(SCREEN_WIDTH,0, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight);
+        _articleVC.view.frame = CGRectMake(SCREEN_WIDTH,0, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight-(self.isInAI?kMeTabBarHeight:0));
         _articleVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         [self addChildViewController:_articleVC];
     }

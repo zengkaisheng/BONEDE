@@ -12,4 +12,8 @@
 
 - (instancetype)initWithActice;
 
+- (instancetype)initWithPost;
+
+- (void)reloadData;
+
 @end

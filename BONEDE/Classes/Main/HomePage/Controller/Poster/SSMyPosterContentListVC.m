@@ -16,6 +16,7 @@
 @interface SSMyPosterContentListVC ()<UICollectionViewDelegate,UICollectionViewDataSource,RefreshToolDelegate>{
     CGFloat _cellHeight;
     BOOL _isActive;
+    BOOL _isPost;
 }
 
 @property (nonatomic, strong) UICollectionView *collectionView;
@@ -32,6 +33,13 @@
     return self;
 }
 
+- (instancetype)initWithPost{
+    if(self = [super init]){
+        _isPost = YES;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     _cellHeight = [SSMyPosterContentCell getCellHeight];
@@ -39,9 +47,17 @@
     [self.refresh addRefreshView];
 }
 
+- (void)reloadData {
+    [self.refresh reload];
+}
+
 - (NSDictionary *)requestParameter{
     if(_isActive){
         return @{@"token":kMeUnNilStr(kCurrentUser.token)};
+    }else if (_isPost) {
+        return @{@"token":kMeUnNilStr(kCurrentUser.token),
+                 @"store_id":kMeUnNilStr(kCurrentUser.store_id)
+                 };
     }
     return @{@"token":kMeUnNilStr(kCurrentUser.token)};
 }
@@ -83,11 +99,17 @@
         cell.delBlock = ^{
             SSAlertView *aler = [[SSAlertView alloc] initWithTitle:@"" message:@"确定删除吗?"];
             [aler addButtonWithTitle:@"确定" block:^{
+                kMeSTRONGSELF
                 NSString *strId = @(model.idField).description;
-                [SSPublicNetWorkTool postDelSharePosterWithId:kMeUnNilStr(strId) SuccessBlock:^(ZLRequestResponse *responseObject) {
-                    kMeSTRONGSELF
-                    [strongSelf.refresh reload];
-                } failure:nil];
+                if (strongSelf->_isPost) {
+                    [SSPublicNetWorkTool postDelMyPostersWithId:kMeUnNilStr(strId) SuccessBlock:^(ZLRequestResponse *responseObject) {
+                        [strongSelf.refresh reload];
+                    } failure:nil];
+                }else {
+                    [SSPublicNetWorkTool postDelSharePosterWithId:kMeUnNilStr(strId) SuccessBlock:^(ZLRequestResponse *responseObject) {
+                        [strongSelf.refresh reload];
+                    } failure:nil];
+                }
             }];
             [aler addButtonWithTitle:@"取消"];
             [aler show];
@@ -141,7 +163,7 @@
     if(!_collectionView){
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight)  collectionViewLayout:layout];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0,0, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight-90)  collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor whiteColor];
         [_collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([SSMyPosterContentCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([SSMyPosterContentCell class])];
         [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader  withReuseIdentifier:@"WMBannerView"];
@@ -159,6 +181,9 @@
         if(_isActive){
             str = SSIPadminGetActivePoster;
         }
+        if (_isPost) {
+            str = SSIPadminGetMyPosters;
+        }
         _refresh = [[ZLRefreshTool alloc]initWithContentView:self.collectionView url:kGetApiWithUrl(str)];
         _refresh.delegate = self;
         _refresh.isDataInside = YES;
@@ -168,7 +193,9 @@
             failView.backgroundColor = [UIColor whiteColor];
             if(strongSelf->_isActive){
                 failView.lblOfNodata.text = @"没有活动";
-            }else{
+            }else if (strongSelf->_isPost) {
+                failView.lblOfNodata.text = @"没有上传";
+            }else {
                failView.lblOfNodata.text = @"没有分享";
             }
         }];

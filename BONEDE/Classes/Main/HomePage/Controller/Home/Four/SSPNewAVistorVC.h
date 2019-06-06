@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface SSPNewAVistorVC : SSBaseVC
 
+@property (nonatomic, assign) BOOL isInAI;//是否在AI雷达中显示
+
 @end
 
 NS_ASSUME_NONNULL_END

@@ -1059,6 +1059,8 @@
 		EB8B8C232296717300132298 /* ViewPagerTitleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EB8B8C222296717300132298 /* ViewPagerTitleButton.m */; };
 		EB9F946C2297CDA50049CFFD /* SSChooseTerminalView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F946B2297CDA50049CFFD /* SSChooseTerminalView.m */; };
 		EB9F946F2297CE3A0049CFFD /* SSChooseTerminalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB9F946E2297CE3A0049CFFD /* SSChooseTerminalVC.m */; };
+		EBE10F5322A8B72500DD896B /* SSEditPosterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE10F5122A8B72500DD896B /* SSEditPosterVC.m */; };
+		EBE10F5422A8B72500DD896B /* SSEditPosterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBE10F5222A8B72500DD896B /* SSEditPosterVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -2937,6 +2939,9 @@
 		EB9F946B2297CDA50049CFFD /* SSChooseTerminalView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSChooseTerminalView.m; sourceTree = "<group>"; };
 		EB9F946D2297CE3A0049CFFD /* SSChooseTerminalVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSChooseTerminalVC.h; sourceTree = "<group>"; };
 		EB9F946E2297CE3A0049CFFD /* SSChooseTerminalVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSChooseTerminalVC.m; sourceTree = "<group>"; };
+		EBE10F5022A8B72500DD896B /* SSEditPosterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSEditPosterVC.h; sourceTree = "<group>"; };
+		EBE10F5122A8B72500DD896B /* SSEditPosterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSEditPosterVC.m; sourceTree = "<group>"; };
+		EBE10F5222A8B72500DD896B /* SSEditPosterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SSEditPosterVC.xib; sourceTree = "<group>"; };
 		ED495BEECBD911B852ED125F /* libPods-BONEDE.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BONEDE.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -3465,6 +3470,9 @@
 				36F1F2B42283BFB400459E88 /* SSMyPosterContentListVC.m */,
 				36F1F2B62283BFB400459E88 /* SSPosterMoreListVC.h */,
 				36F1F2AF2283BFB400459E88 /* SSPosterMoreListVC.m */,
+				EBE10F5022A8B72500DD896B /* SSEditPosterVC.h */,
+				EBE10F5122A8B72500DD896B /* SSEditPosterVC.m */,
+				EBE10F5222A8B72500DD896B /* SSEditPosterVC.xib */,
 			);
 			path = Poster;
 			sourceTree = "<group>";
@@ -6433,6 +6441,7 @@
 				36F1F9B92283BFB700459E88 /* SSShoppingCartCell.xib in Resources */,
 				36F1F7BE2283BFB600459E88 /* SSMakeOrderHeaderCell.xib in Resources */,
 				36F1F8162283BFB600459E88 /* SSClerkWorkDaliyCell.xib in Resources */,
+				EBE10F5422A8B72500DD896B /* SSEditPosterVC.xib in Resources */,
 				36F1FA032283BFB800459E88 /* SSServiceDetailsBottomView.xib in Resources */,
 				36F1F9A62283BFB700459E88 /* SSAddClerkCell.xib in Resources */,
 				36F1F95E2283BFB700459E88 /* SSGoodManngerCell.xib in Resources */,
@@ -7247,6 +7256,7 @@
 				36F1F8B82283BFB700459E88 /* SSLogisticsVC.m in Sources */,
 				36F1F76D2283BFB600459E88 /* SSNewClerkManngerVC.m in Sources */,
 				36384877228D30B100DD062C /* SSMineBargainCell.m in Sources */,
+				EBE10F5322A8B72500DD896B /* SSEditPosterVC.m in Sources */,
 				36F1FD242283BFEA00459E88 /* UIView+CLSetRect.m in Sources */,
 				36F1FC602283BFE900459E88 /* AAYAxis.m in Sources */,
 				36F1FC6B2283BFE900459E88 /* AAMarker.m in Sources */,

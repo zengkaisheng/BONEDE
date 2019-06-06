@@ -1720,6 +1720,51 @@
     }];
 }
 
++ (void)postDelMyPostersWithId:(NSString *)posterId SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure{
+    NSDictionary *dic = @{@"id":posterId,@"token":kMeUnNilStr(kCurrentUser.token)};
+    NSString *url = kGetApiWithUrl(SSIPcommonDelMyPosters);
+    MBProgressHUD *HUD = [self commitWithHUD:@"删除中..."];
+    [THTTPManager postWithParameter:dic strUrl:url success:^(ZLRequestResponse *responseObject) {
+        [HUD hideAnimated:YES];
+        kMeCallBlock(successBlock,responseObject);
+    } failure:^(id error) {
+        if([error isKindOfClass:[ZLRequestResponse class]]){
+            ZLRequestResponse *res = (ZLRequestResponse*)error;
+            [SSShowViewTool SHOWHUDWITHHUD:HUD test:kMeUnNilStr(res.message)];
+        }else{
+            [SSShowViewTool SHOWHUDWITHHUD:HUD test:kApiError];
+        }
+        kMeCallBlock(failure,error);
+    }];
+}
+
+//海报上传
++ (void)postMyPostersWithStoreId:(NSString *)storeId title:(NSString *)title image:(NSString*)image classifyId:(NSString *)classifyId successBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure{
+    NSDictionary *dic = @{@"store_id":kMeUnNilStr(storeId),
+                          @"token":kMeUnNilStr(kCurrentUser.token),
+                          @"image":kMeUnNilStr(image),
+                          @"title":kMeUnNilStr(title),
+                          @"classify_id":kMeUnNilStr(classifyId)};
+    NSString *url = kGetApiWithUrl(SSIPcommonaAddMyPosters);
+//    MBProgressHUD *HUD = [self commitWithHUD:@"上传中"];
+    [THTTPManager postWithParameter:dic strUrl:url success:^(ZLRequestResponse *responseObject) {
+//        [HUD hideAnimated:YES];
+        kMeCallBlock(successBlock,responseObject);
+    } failure:^(id error) {
+        MBProgressHUD *HUD = [self commitWithHUD:@""];
+        if([error isKindOfClass:[ZLRequestResponse class]]){
+            ZLRequestResponse *res = (ZLRequestResponse*)error;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SSShowViewTool SHOWHUDWITHHUD:HUD test:kMeUnNilStr(res.message)];
+            });
+        }else{
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [SSShowViewTool SHOWHUDWITHHUD:HUD test:kApiError];
+            });
+        }
+        kMeCallBlock(failure,error);
+    }];
+}
 
 /***************************************/
 

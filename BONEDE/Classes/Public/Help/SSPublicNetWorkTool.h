@@ -319,6 +319,10 @@
 + (void)postSharePosterWithId:(NSString *)posters_id SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
 //删除海报
 + (void)postDelSharePosterWithId:(NSString *)shareId SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
+//删除我的上传海报
++ (void)postDelMyPostersWithId:(NSString *)posterId SuccessBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
+//海报上传
++ (void)postMyPostersWithStoreId:(NSString *)storeId title:(NSString *)title image:(NSString*)image classifyId:(NSString *)classifyId successBlock:(RequestResponse)successBlock failure:(kMeObjBlock)failure;
 /***************************************/
 
 

@@ -192,6 +192,7 @@
 - (SSPNewAVistorVC *)PNewAVistorVC {
     if (!_PNewAVistorVC) {
         _PNewAVistorVC = [[SSPNewAVistorVC alloc]init];
+        _PNewAVistorVC.isInAI = YES;
         _PNewAVistorVC.view.autoresizingMask = UIViewAutoresizingFlexibleWidth;
         _PNewAVistorVC.view.frame = CGRectMake(SCREEN_WIDTH,0, SCREEN_WIDTH, SCREEN_HEIGHT-kMeNavBarHeight-kCategoryViewHeight-kMeTabBarHeight);
         [self addChildViewController:_PNewAVistorVC];

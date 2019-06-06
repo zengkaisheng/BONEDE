@@ -80,7 +80,7 @@ NSString *const kServerError = @"服务器无法连接";
 //    MBProgressHUD *progress = [MBProgressHUD showHUDAddedTo:view animated:YES];
 //    progress.dimBackground = YES;
 //    progress.mode = MBProgressHUDModeAnnularDeterminate;
-    NSLog(@"dicParameter = %@",parameter);
+    NSLog(@"urlStr==%@ \n dicParameter = %@",urlStr,parameter);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
@@ -122,7 +122,7 @@ NSString *const kServerError = @"服务器无法连接";
     }
     if(view) [MBProgressHUD showHUDAddedTo:view animated:YES];
     NSDictionary *dicParameter = [self dicParameterWithDic:parameter];
-    NSLog(@"dicParameter = %@",dicParameter);
+    NSLog(@"urlStr==%@ \n dicParameter = %@",urlStr,parameter);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [self customProcessingForManager:manager];//设置相应内容类型
     [manager POST:urlStr parameters:dicParameter progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -156,6 +156,7 @@ NSString *const kServerError = @"服务器无法连接";
               failure:(kMeObjBlock)failure{
     if(view) [MBProgressHUD showHUDAddedTo:view animated:YES];
     NSDictionary *dicParmeter = [self dicParameterWithDic:parameter];
+    NSLog(@"urlStr==%@ \n dicParameter = %@",urlStr,parameter);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [self customProcessingForManager:manager];//设置相应内容类型
     [manager GET:urlStr parameters:dicParmeter progress:nil success:^(NSURLSessionTask *task, id responseObject) {
@@ -172,6 +173,7 @@ NSString *const kServerError = @"服务器无法连接";
        success:(kMeObjBlock)success
               failure:(kMeObjBlock)failure{
     NSDictionary *dicParmeter = [self dicParameterWithDic:parameter];
+    NSLog(@"urlStr==%@ \n dicParameter = %@",urlStr,parameter);
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
 //    NSMutableSet *types = [NSMutableSet setWithObjects:@"text/html",@"text/plain", nil];
 //    [types unionSet:manager.responseSerializer.acceptableContentTypes];

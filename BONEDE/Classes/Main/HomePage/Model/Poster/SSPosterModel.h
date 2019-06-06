@@ -22,6 +22,7 @@
 @property (nonatomic, assign) NSInteger status;
 @property (nonatomic, strong) NSString * title;
 @property (nonatomic, strong) NSString * updated_at;
+@property (nonatomic, assign) NSInteger store_id;
 
 @end
 

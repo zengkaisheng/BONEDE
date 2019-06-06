@@ -35,9 +35,9 @@
     _nameLbl.text = kMeUnNilStr(model.name);
     _timeLbl.text = kMeUnNilStr(model.created_at);
     
-    NSMutableAttributedString *aString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"访问数：%ld次",model.count]];
+    NSMutableAttributedString *aString = [[NSMutableAttributedString alloc]initWithString:[NSString stringWithFormat:@"访问数：%ld次",(long)model.count]];
     NSUInteger firstLoc = [[aString string] rangeOfString:@"："].location + 1;
-    NSString *count = [NSString stringWithFormat:@"%ld",model.count];
+    NSString *count = [NSString stringWithFormat:@"%ld",(long)model.count];
     NSRange range = NSMakeRange(firstLoc, count.length);
     [aString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithHexString:@"#55BA34"] range:range];
     _countLbl.attributedText = aString;

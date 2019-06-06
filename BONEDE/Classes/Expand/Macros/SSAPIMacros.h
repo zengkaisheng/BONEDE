@@ -482,10 +482,16 @@
 #define SSIPcommonGetSharePoster @"common/posters/getSharePoster"
 //获取活动海报列表
 #define SSIPadminGetActivePoster @"common/groupfission/getActivity"
+//获取我的上传海报列表
+#define SSIPadminGetMyPosters @"common/posters/myPosters"
 //查询会员当前活动任务情况
 #define SSIPadminGetAppGetShare @"common/posters/getActivityLog"
+//上传我的海报
+#define SSIPcommonaAddMyPosters @"common/posters/addPosters"
 //删除海报
 #define SSIPcommonDelSharePosters @"common/posters/delSharePosters"
+//删除我的上传海报
+#define SSIPcommonDelMyPosters @"common/posters/delPosters"
 //获取活动海报二维码
 #define SSIPadminappGetQrcode @"common/groupfission/appGetQrcode"
 /*********************************************/
