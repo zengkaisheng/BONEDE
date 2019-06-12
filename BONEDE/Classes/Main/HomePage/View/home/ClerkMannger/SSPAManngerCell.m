@@ -11,7 +11,7 @@
 #import "SSPosterListVC.h"
 #import "SSArticelVC.h"
 #import "SSVisiterHomeVC.h"
-#import "SSPAVistorVC.h"
+//#import "SSPAVistorVC.h"
 #import "SSPNewAVistorVC.h"
 @implementation SSPAManngerCell
 

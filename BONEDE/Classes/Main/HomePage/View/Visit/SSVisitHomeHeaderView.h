@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class SSVistorCountModel;
+const static CGFloat kSSVisitHomeHeaderViewNewHeight = 455;
 const static CGFloat kSSVisitHomeHeaderViewHeight = 265;
 
 @interface SSVisitHomeHeaderView : UITableViewHeaderFooterView
+
+@property (nonatomic, copy) kMeIndexBlock indexBlock;
 
 + (CGFloat)getViewHeight;
 - (void)setUIWithModel:(SSVistorCountModel *)model;

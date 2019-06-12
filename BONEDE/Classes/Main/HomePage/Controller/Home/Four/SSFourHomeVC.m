@@ -29,6 +29,8 @@
 #import "SSPAManngerVC.h"
 #import "SSCLerkWorkShowListVC.h"
 
+#import "SSVisiterHomeVC.h"
+
 @interface SSFourHomeVC ()<UITableViewDelegate,UITableViewDataSource,SSFourHomeHeaderViewDelegate>
 {
     SSFourHomeModel *_homeModel;
@@ -85,7 +87,8 @@
 }
 
 - (void)toPAVC{
-    SSPAManngerVC *vc = [[SSPAManngerVC alloc]init];
+//    SSPAManngerVC *vc = [[SSPAManngerVC alloc]init];
+    SSVisiterHomeVC *vc = [[SSVisiterHomeVC alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

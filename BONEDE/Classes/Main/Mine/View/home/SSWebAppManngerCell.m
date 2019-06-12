@@ -17,12 +17,20 @@
 #import "SSProductShoppingCartVC.h"
 #import "SSMineActiveListVC.h"
 #import "SSHomeTestVC.h"
+@interface SSWebAppManngerCell ()
+
+@property (weak, nonatomic) IBOutlet UIView *testView;
+
+
+@end
+
 @implementation SSWebAppManngerCell
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.selectionStyle = 0;
     // Initialization code
+    _testView.hidden  = YES;
 }
 
 - (IBAction)brandStoryAction:(UIButton *)sender {

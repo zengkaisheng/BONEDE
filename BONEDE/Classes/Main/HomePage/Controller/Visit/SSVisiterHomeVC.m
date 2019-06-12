@@ -16,11 +16,13 @@
 #import "SSVistorCountModel.h"
 #import "SSVistorUserModel.h"
 
+#import "SSPosterListVC.h"
+#import "SSArticelVC.h"
+#import "SSHomeTestVC.h"
+
 @interface SSVisiterHomeVC ()<UITableViewDelegate, UITableViewDataSource,RefreshToolDelegate>{
     MyEnumkSSVisterSectionViewType _type;
-}
-
-@property (nonatomic , strong) SSVisitHomeHeaderView *headerView;
+}@property (nonatomic , strong) SSVisitHomeHeaderView *headerView;
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic , strong) UIView *viewForNav;
 @property (nonatomic , strong) SSVisterTodyCell *vCell;
@@ -33,10 +35,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navBarHidden = YES;
+    if (kCurrentUser.user_type == 3) {
+        self.title = @"获客图文";
+    }else if (kCurrentUser.user_type == 5) {
+        self.navBarHidden = YES;
+        [self.view addSubview:self.viewForNav];
+    }
+    
     self.view.backgroundColor = kSSPink;
     _type = MyEnumkSSVisterSectionViewAllType;
-    [self.view addSubview:self.viewForNav];
     [self.view addSubview:self.tableView];
     self.tableView.tableHeaderView = self.headerView;
 //    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(requestNetWork)];
@@ -202,6 +209,31 @@
     if(!_headerView){
         _headerView = [[[NSBundle mainBundle]loadNibNamed:@"SSVisitHomeHeaderView" owner:nil options:nil] lastObject];
         _headerView.frame = CGRectMake(0, 0, SCREEN_WIDTH, [SSVisitHomeHeaderView getViewHeight]);
+        kMeWEAKSELF
+        _headerView.indexBlock = ^(NSInteger index) {
+            switch (index) {
+                case 0:
+                {//海报
+                    SSPosterListVC *poster = [[SSPosterListVC alloc]init];
+                    [weakSelf.navigationController pushViewController:poster animated:YES];
+                }
+                    break;
+                case 1:
+                {//文章
+                    SSArticelVC *articel = [[SSArticelVC alloc]init];
+                    [weakSelf.navigationController pushViewController:articel animated:YES];
+                }
+                    break;
+                case 2:
+                {//题库
+                    SSHomeTestVC *vc = [[SSHomeTestVC alloc]init];
+                    [weakSelf.navigationController pushViewController:vc animated:YES];
+                }
+                    break;
+                default:
+                    break;
+            }
+        };
     }
     return _headerView;
 }
